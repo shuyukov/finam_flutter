@@ -23,13 +23,17 @@ class Post extends StatelessWidget {
         centerTitle: true,
       ),
       body: SafeArea(
-        child: Padding(
+        child: SingleChildScrollView(
           padding: const EdgeInsets.all(20),
           child: Column(
             children: [
-              Text(data[index].title),
+              Text(
+                data[index].title,
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
               const SizedBox(height: 10),
-              Text(data[index].ups),
+              Text("ups: ${data[index].ups}",
+                  style: const TextStyle(fontWeight: FontWeight.bold)),
               const SizedBox(height: 10),
               Text(data[index].text!),
             ],
